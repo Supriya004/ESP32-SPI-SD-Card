@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Supriya",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp1", "top": 60, "left": 10, "attrs": {} },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 60, "left": 310, "attrs": {} }
+  ],
+ "connections": [
+    ["esp1:TX", "$serialMonitor:RX", "", []],
+    ["esp1:RX", "$serialMonitor:TX", "", []],
+
+    ["sd1:DI", "esp1:23", "green", ["h0"]],
+    ["sd1:VCC", "esp1:3V3", "red", ["h0"]],
+    ["sd1:SCK", "esp1:18", "green", ["h0"]],
+    ["sd1:GND", "esp1:GND.2", "black", ["h0"]],
+    ["sd1:DO", "esp1:19", "green", ["h0"]],
+    ["sd1:CS", "esp1:5", "green", ["h0"]]
+],
+"dependencies": {},
+"serialMonitor": {
+    "display": "always"
+}
+}
